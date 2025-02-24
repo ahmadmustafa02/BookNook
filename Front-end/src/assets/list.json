@@ -1,0 +1,88 @@
+[
+    {
+      
+      "id": 2,
+      "name": "The Art of Blogging",
+      "title": "How to start a successful blog",
+      "price": "0",
+      "category": "Free",
+      "image": "../../public/pic4.png"
+      
+    },
+    {
+      "id": 1,
+
+      "name": "the Mythical man",
+      "title": "software project management",
+      "price": "0",
+      "category": "Free",
+      "image": "../../public/pic5.png"
+     
+    },
+    {
+      "id": 3,
+      "name": "The Design of Things",
+      "title": "Advanced graphic design techniques",
+      "price": "20",
+      "category": "Premium",
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg"
+    },
+    {
+      "id": 4,
+      "name": "This Is Marketing",
+      "title": "Introduction to digital marketing",
+      "price": "0",
+      "category": "Free",
+      "image": "../../public/pic1.png"
+    },
+    {
+      "id": 5,
+      "name": "Rich Dad Poor Dad",
+      "title": "Secrets to personal finance",
+      "price": "30",
+      "category": "Exclusive",
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Atomic Habits",
+      "title": "Mastering time management",
+      "price": "0",
+      "category": "Free",
+      "image": "../../public/pic3.png"
+     
+    },
+    {
+      "id": 7,
+      "name": "On Writing",
+      "title": "The art of creative writing",
+      "price": "18",
+      "category": "Standard",
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Understand Exposure",
+      "title": "Photography for beginners",
+      "price": "25",
+      "category": "Premium",
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg"
+    },
+    {
+      "id": 9,
+      "name": "The Power of Habit",
+      "title": "Healthy habits for a better life",
+      "price": "8",
+      "category": "Economy",
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Clean Code",
+      "title": "Beginner's guide to coding",
+      "price": "0",
+      "category": "Free",
+      "image": "../../public/pic2.png"
+
+    }
+]
