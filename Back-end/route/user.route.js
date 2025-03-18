@@ -4,6 +4,6 @@ import { login, signUp } from "../controller/user.controller.js"; // Ensure .js 
 const router = express.Router();
 
 router.post("/signup", signUp);
-router.post("/login", login)
+router.post("/login", login);
 
 export default router;

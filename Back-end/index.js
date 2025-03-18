@@ -1,45 +1,48 @@
-import express from "express"
-import dotenv from "dotenv"
+import express from "express";
+import dotenv from "dotenv";
 import mongoose from "mongoose";
-
-import bookRoute from "./route/book.route.js"
-
+import bookRoute from "./route/book.route.js";
+import userRoute from "./route/user.route.js";
+import reviewRoute from "./route/review.route.js";
+import wishlistRoute from "./route/wishlist.route.js";
+import faqRoute from "./route/faq.route.js";
+import discountRoute from "./route/discount.route.js";
+import contactRoute from "./route/contact.route.js";
+import announcementRoute from "./route/announcement.route.js";
+import orderRoute from "./route/order.route.js";
 import cors from "cors";
-
-import userRoute from "./route/user.route.js"
-
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
-app.use(express.json()); // ✅ Correct
 
 
+app.use(express.json());
 
-const PORT = process.env.PORT || 4002;
+const PORT = process.env.PORT || 4001;
 const dbURL = process.env.MongoDB_URL;
 
-//connnect to mongodb
+// Connect to MongoDB
 try {
-    mongoose.connect(dbURL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-    );
+    mongoose.connect(dbURL);
     console.log("Connected to MongoDB");
 } catch (error) {
-    console.log("Error connecting");
+    console.error("Error connecting to MongoDB:", error.message);
+    process.exit(1);
 }
 
-
-//defining routes
+// Defining routes
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
-
-//middleware
-
+app.use("/review", reviewRoute);
+app.use("/wishlist", wishlistRoute);
+app.use("/faq", faqRoute);
+app.use("/discount", discountRoute);
+app.use("/contact", contactRoute);
+app.use("/announcements", announcementRoute);
+app.use("/order", orderRoute); // This will now correctly handle /order endpoint
 
 app.listen(PORT, () => {
-    console.log(`Server app listening on port ${PORT}`)
-})
+    console.log(`Server app listening on port ${PORT}`);
+});

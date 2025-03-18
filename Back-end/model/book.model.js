@@ -8,6 +8,8 @@ const bookSchema = mongoose.Schema({
      category: String,
      image: String,
      title: String,
+     fileUrl: String 
+
 
 })
 
