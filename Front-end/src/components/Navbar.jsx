@@ -39,9 +39,11 @@ function Navbar() {
   const navItems = (
     <>
       <li><a href="/">Home</a></li>
-      <li><a href="/course">Course</a></li>
+      <li><a href="/course">Premium</a></li>
       <li><Link to="/contact" className="link link-hover hover:no-underline">Contact</Link></li>
       <li><Link to="/about" className="link link-hover hover:no-underline">About us</Link></li>
+      <li><Link to="/wishlist">Wishlist</Link></li>
+      <li><Link to="/discounts">Discounts</Link></li>
     </>
   );
 

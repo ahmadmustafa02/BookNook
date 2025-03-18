@@ -17,26 +17,26 @@ function Signup() {
 
   const onSubmit = async (data) => {
     const userInfo = {
-      fullName: data.fullName,
+      fullname: data.fullName, // Changed from fullName to fullname to match backend
       email: data.email,
       password: data.password,
     };
-    await axios
-      .post("http://localhost:4001/user/signup", userInfo)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data) {
-          toast.success("Signup Successfully");
-          navigate(from, { replace: true });
-        }
-        localStorage.setItem("Users", JSON.stringify(res.data.user));
-      })
-      .catch((err) => {
-        if (err.response) {
-          console.log(err);
-          toast.error("Error: " + err.response.data.message);
-        }
-      });
+    try {
+      const response = await axios.post("http://localhost:4001/user/signup", userInfo);
+      console.log("Signup response:", response.data);
+      if (response.data) {
+        toast.success("Signup Successfully");
+        localStorage.setItem("Users", JSON.stringify(response.data.user));
+        navigate(from, { replace: true });
+      }
+    } catch (err) {
+      console.error("Signup error:", err);
+      if (err.response) {
+        toast.error("Error: " + err.response.data.message);
+      } else {
+        toast.error("Error: An unexpected error occurred");
+      }
+    }
   };
 
   return (

@@ -63,9 +63,9 @@ const Freebook = () => {
       <div className="px-4">
         {book.length > 0 ? (
           <Slider {...settings}>
-            {book.map((item) => (
-              <Cards item={item} key={item.id} />
-            ))}
+          {book.map((item) => (
+  <Cards item={item} key={item._id || item.id} />
+))}
           </Slider>
         ) : (
           <p className="dark:text-gray-300">No books found.</p>
