@@ -10,7 +10,7 @@ const Home = () => {
     <Navbar />
     <Banner />
     <Freebook />
-    <Footer />
+  
     
     </>
   )

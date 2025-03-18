@@ -53,8 +53,8 @@ function Reviews() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Reviews</h1>
+    <div className="max-w-2xl mx-auto p-10">
+      <h1 className="text-2xl font-bold mb-4 mt-10">Reviews</h1>
       {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmitReview} className="mb-4">
         <div className="mb-4">

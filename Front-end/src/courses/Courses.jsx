@@ -11,7 +11,7 @@ const Courses = () => {
 
     </div>
 
-    <Footer />
+
 
     
     </>
