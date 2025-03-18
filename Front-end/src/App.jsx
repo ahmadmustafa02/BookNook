@@ -17,6 +17,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Announcements from "./components/Announcements";
 import Order from "./components/Order";
 import Login from "./components/Login"; // Add this if you want a login page
+import Layout from "./components/Layout"; // Import the new Layout component
 
 function App() {
     const [authUser] = useAuth();
@@ -35,30 +36,46 @@ function App() {
 
     return (
         <AuthProvider>
-            <SearchProvider>
-                <div className="dark:bg-slate-900 dark:text-white">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route
-                            path="/course"
-                            element={authUser ? <Courses /> : <Navigate to="/signup" />}
-                        />
-                        <Route path="/signup" element={<Signup />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/reviews/:id" element={<Reviews />} />
-                        <Route path="/wishlist" element={authUser ? <Wishlist /> : <Navigate to="/signup" />} />
-                        <Route path="/discounts" element={authUser ? <Discounts /> : <Navigate to="/signup" />} />
-                        <Route path="/faq" element={<ErrorBoundary><FAQ /></ErrorBoundary>} />
-                        <Route path="/announcements" element={<ErrorBoundary><Announcements /></ErrorBoundary>} />
-                        <Route path="/order/:id" element={authUser ? <Order /> : <Navigate to="/signup" />} />
-                        <Route path="/login" element={<Login />} /> {/* Add this if you create a Login component */}
-                        <Route path="*" element={<Navigate to="/" replace />} />
-                    </Routes>
-                    <Toaster />
-                </div>
-            </SearchProvider>
-        </AuthProvider>
+        <SearchProvider>
+          <div className="dark:bg-slate-900 dark:text-white">
+            <Routes>
+              {/* Wrap all routes with Layout */}
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} /> {/* Home as the index route */}
+                <Route
+                  path="course"
+                  element={authUser ? <Courses /> : <Navigate to="/signup" />}
+                />
+                <Route path="signup" element={<Signup />} />
+                <Route path="about" element={<About />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="reviews/:id" element={<Reviews />} />
+                <Route
+                  path="wishlist"
+                  element={authUser ? <Wishlist /> : <Navigate to="/signup" />}
+                />
+                <Route
+                  path="discounts"
+                  element={authUser ? <Discounts /> : <Navigate to="/signup" />}
+                />
+                <Route path="faq" element={<ErrorBoundary><FAQ /></ErrorBoundary>} />
+                <Route
+                  path="announcements"
+                  element={<ErrorBoundary><Announcements /></ErrorBoundary>}
+                />
+                <Route
+                  path="order/:id"
+                  element={authUser ? <Order /> : <Navigate to="/signup" />}
+                />
+                <Route path="login" element={<Login />} />
+              </Route>
+              {/* Catch-all route for unmatched paths */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+            <Toaster />
+          </div>
+        </SearchProvider>
+      </AuthProvider>
     );
 }
 

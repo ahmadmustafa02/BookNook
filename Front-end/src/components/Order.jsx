@@ -45,8 +45,7 @@ function Order() {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 bg-white dark:bg-slate-800 rounded-lg shadow-xl">
-            <h2 className="text-2xl font-bold mb-6 dark:text-white">Place Your Order</h2>
+<div className="max-w-md mx-auto mt-20 p-6 bg-white dark:bg-slate-800 rounded-lg shadow-xl">            <h2 className="text-2xl font-bold mb-6 dark:text-white">Place Your Order</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label className="block text-gray-700 dark:text-gray-300">Full Name</label>
